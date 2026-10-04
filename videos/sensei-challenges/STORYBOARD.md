@@ -12,29 +12,29 @@ Text-only retrospective, same look as the explainer. Motif: hexagonal knowledge 
 
 ## Frame 1 — Title
 
-- scene: Title: Building Sensei — five challenges, four solved, one next step
+- scene: Title: Building Sensei — how we built it, what worked, what didn't
 - duration: 3.5s
 - transition_in: cut
 - status: animated
 - src: compositions/frames/01-title.html
 - blueprint: compose
 
-## Frame 2 — Why Sensei
-
-- scene: Why Sensei: know-how that compounds; honeycomb grows
-- duration: 6s
-- transition_in: blur-crossfade
-- status: animated
-- src: compositions/frames/02-purpose.html
-- blueprint: compose
-
-## Frame 3 — Architecture flow
+## Frame 2 — Architecture flow
 
 - scene: Architecture flow
 - duration: 8s
 - transition_in: blur-crossfade
 - status: animated
-- src: compositions/frames/03-architecture.html
+- src: compositions/frames/02-architecture.html
+- blueprint: compose
+
+## Frame 3 — Key tools
+
+- scene: Key tools: Next.js, ElevenLabs, Claude, browser APIs; Presidio didn't make it
+- duration: 7s
+- transition_in: blur-crossfade
+- status: animated
+- src: compositions/frames/03-tools.html
 - blueprint: compose
 
 ## Frame 4 — Challenge 1
@@ -85,16 +85,16 @@ Text-only retrospective, same look as the explainer. Motif: hexagonal knowledge 
 ## Frame 9 — Bigger picture
 
 - scene: Bigger picture
-- duration: 6s
+- duration: 5.5s
 - transition_in: blur-crossfade
 - status: animated
 - src: compositions/frames/09-bigger.html
 - blueprint: compose
 
-## Frame 10 — Sensei logo (hanko 先) — Teach the next generation
+## Frame 10 — Sensei logo — Teach the next generation
 
-- scene: Sensei logo (hanko 先) — Teach the next generation
-- duration: 3.5s
+- scene: Sensei logo — Teach the next generation
+- duration: 3s
 - transition_in: blur-crossfade
 - status: animated
 - src: compositions/frames/10-close.html

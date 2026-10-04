@@ -156,8 +156,8 @@ $R .planned{border:2px dashed #c9a974;color:#8f6f3c;background:#f7f6f1;}
 
 
 def ch_markup(n, title, prob, solved, at, at2):
-    lab = (f'{check(26, INDIGO)}HOW WE SOLVED IT' if solved else
-           f'<svg width="22" height="22" viewBox="-11 -11 22 22"><polygon points="{hex_points(0, 0, 10)}" fill="none" stroke="#8f6f3c" stroke-width="2.5" stroke-dasharray="4 3"/></svg>STILL OPEN · NEXT STEP')
+    lab = (f'{check(26, INDIGO)}WHAT WORKED' if solved else
+           f'<svg width="22" height="22" viewBox="-11 -11 22 22"><polygon points="{hex_points(0, 0, 10)}" fill="none" stroke="#8f6f3c" stroke-width="2.5" stroke-dasharray="4 3"/></svg>NOT SOLVED YET · NEXT STEP')
     return (f'<div class="chip"><b>{n}</b>Challenge</div>'
             f'<h1 class="h1 title">{words(title)}</h1>'
             f'<div class="prob">{prob}</div>'
@@ -190,7 +190,7 @@ $R .row{position:absolute;left:805px;top:700px;width:320px;height:72px;}
 """, f"""
 <div class="tlogo"><span class="hanko">先</span></div>
 <div class="mark">{words("Building Sensei")}</div>
-<div class="sub"><span class="w s1">Five challenges.</span> <span class="w s2"><b class="indigo">Four</b> solved.</span> <span class="w s3"><b style="color:#8f6f3c">One</b> next step.</span></div>
+<div class="sub"><span class="w s1">How we built it.</span> <span class="w s2"><b class="indigo">What worked.</b></span> <span class="w s3"><b style="color:#8f6f3c">What didn’t.</b></span></div>
 <svg class="row" viewBox="0 0 320 72">{"".join(f'<polygon class="ph" points="{hex_points(30 + i * 62, 36, 24)}" fill="none" stroke="{LINE}" stroke-width="2.5" stroke-dasharray="5 5"/>' for i in range(5))}</svg>
 """, """
 tl.fromTo(q('.tlogo .hanko'),{opacity:0,scale:1.8,rotation:-20},{opacity:1,scale:1,rotation:-4,duration:.45,ease:"back.out(2.2)"},.1);
@@ -199,32 +199,6 @@ tl.fromTo(q('.s1'),{opacity:0,y:20},{opacity:1,y:0,duration:.5},1.5);
 tl.fromTo(q('.s2'),{opacity:0,y:20},{opacity:1,y:0,duration:.5},2.2);
 tl.fromTo(q('.s3'),{opacity:0,y:20},{opacity:1,y:0,duration:.5},2.9);
 tl.fromTo(qa('.ph'),{opacity:0,scale:.4,transformOrigin:"50% 50%"},{opacity:1,scale:1,duration:.35,stagger:.1,ease:"back.out(2)"},3.4);
-""")
-
-# ─────────────────────────── 02 purpose ───────────────────────────
-HC2 = (1390, 490)
-frame("02-purpose", 8, """
-$R .title{left:180px;top:178px;width:960px;font-size:68px;}
-$R .bl{position:absolute;left:184px;width:780px;display:flex;gap:22px;align-items:flex-start;font-size:36px;font-weight:700;line-height:1.35;}
-$R .bl i{flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-top:2px;}
-$R .hc{position:absolute;left:0;top:0;width:1920px;height:1080px;}
-$R .foot{position:absolute;left:184px;top:790px;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:44px;color:#223a5e;}
-""", f"""
-<div class="chip"><b>{HEX_ICON}</b>Why Sensei</div>
-<h1 class="h1 title">{words("Know-how that compounds.")}</h1>
-{"".join(f'<div class="bl b{i}" style="top:{330 + i * 120}px"><i><svg width="40" height="40" viewBox="-20 -20 40 40"><polygon points="{hex_points(0, 0, 18)}" fill="{c}"/></svg></i><span>{t}</span></div>' for i, (t, c) in enumerate([("Capture it from experienced employees.", INDIGO), ("Filter out the real business logic.", HINOKI), ("Apply it, and teach new hires what it means for business decisions.", SHU)]))}
-<svg class="hc" viewBox="0 0 1920 1080">{honey_svg("hx", HC2[0], HC2[1], 37, 40)}</svg>
-<div class="foot">{words("Every answer adds a piece.")}</div>
-""", """
-tl.fromTo(q('.chip'),{opacity:0,x:-20},{opacity:1,x:0,duration:.5,ease:"power2.out"},0);
-tl.fromTo(qa('.title .w'),{opacity:0,y:34},{opacity:1,y:0,duration:.55,stagger:.08,ease:"power3.out"},.15);
-const hx=qa('.hx');
-const grow=(a,b,t,st)=>tl.fromTo(Array.prototype.slice.call(hx,a,b),{opacity:0,scale:0,transformOrigin:"50% 50%"},{opacity:1,scale:1,duration:.4,stagger:st,ease:"back.out(2)"},t);
-grow(0,1,.5,.1);
-tl.fromTo(q('.b0'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:"power2.out"},1.3); grow(1,7,1.4,.1);
-tl.fromTo(q('.b1'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:"power2.out"},2.7); grow(7,19,2.8,.08);
-tl.fromTo(q('.b2'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:"power2.out"},4.1); grow(19,37,4.2,.07);
-tl.fromTo(qa('.foot .w'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,stagger:.08,ease:"power3.out"},6.0);
 """)
 
 # ─────────────────────────── 03 architecture ───────────────────────────
@@ -242,7 +216,7 @@ arrows_v = (f'<path class="av av0" d="M{vx[1]} 632 v54 M{vx[1] - 12} 674 l12 12 
             f'<path class="av av1" d="M{vx[2]} 632 v54 M{vx[2] - 12} 674 l12 12 l12 -12" fill="none" stroke="{INDIGO}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
             f'<path class="av av2" d="M{vx[3]} 688 v-54 M{vx[3] - 12} 646 l12 -12 l12 12" fill="none" stroke="{SHU}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
 kb_hexes = "".join(f'<polygon class="kh" points="{hex_points(940 + i * 40 + (i % 2) * 0, 752 + (-12 if i % 2 else 12), 18)}" {hex_style(i)} stroke-width="2"/>' for i in range(18))
-frame("03-architecture", 11, """
+frame("02-architecture", 11, """
 $R .title{left:180px;top:170px;width:1600px;font-size:64px;}
 $R .ac{top:320px;width:345px;height:300px;padding:26px 26px 0;}
 $R .an b{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#223a5e;color:#fff;font-size:24px;font-weight:700;}
@@ -271,6 +245,42 @@ tl.fromTo(q('.kb'),{opacity:0,y:24},{opacity:1,y:0,duration:.55,ease:"power2.out
 const av=qa('.av');
 [7.3,7.6,9.0].forEach((t,i)=>{const L=av[i].getTotalLength();tl.fromTo(av[i],{strokeDasharray:L,strokeDashoffset:L},{strokeDashoffset:0,duration:.45,ease:"power2.out"},t);});
 tl.fromTo(qa('.kh'),{opacity:0,scale:0,transformOrigin:"50% 50%"},{opacity:1,scale:1,duration:.35,stagger:.1,ease:"back.out(2)"},7.6);
+""")
+
+# ─────────────────────────── 03 tools ───────────────────────────
+groups = [("APP", INDIGO, ["Next.js 16 · React 19", "TypeScript + Zod", "Tailwind CSS 4"]),
+          ("VOICE · ELEVENLABS", INK, ["3 voice agents", "WebRTC via React SDK", "Eleven v4 voices", "Client tools + knowledge base"]),
+          ("AI · CLAUDE", "#c96442", ["Haiku 4.5 reads screenshots", "Sonnet 5.5 runs the agents", "Opus 5.5 writes Work Maps"]),
+          ("BROWSER", "#8f6f3c", ["Screen share API", "BroadcastChannel clicks", "Local JSON + JPEG store"])]
+tool_cards = ""
+for gi, (name, col, items) in enumerate(groups):
+    rows = "".join(f'<div class="tr"><svg width="22" height="22" viewBox="-11 -11 22 22"><polygon points="{hex_points(0, 0, 10)}" fill="{col}"/></svg><span>{t}</span></div>' for t in items)
+    tool_cards += f'<div class="card tc tc{gi}" style="left:{180 + gi * 405}px"><div class="th" style="color:{col}">{name}</div>{rows}</div>'
+frame("03-tools", 7, """
+$R .title{left:180px;top:170px;width:1600px;font-size:64px;}
+$R .tc{top:300px;width:375px;height:320px;padding:30px 28px;}
+$R .th{font-size:20px;font-weight:700;letter-spacing:4px;margin-bottom:22px;}
+$R .tr{display:flex;align-items:center;gap:14px;margin-top:16px;font-size:26px;font-weight:700;line-height:1.25;}
+$R .tr svg{flex:none;}
+$R .miss{position:absolute;left:180px;top:672px;width:1580px;height:96px;display:flex;align-items:center;gap:26px;padding:0 30px;border:2px dashed #b6402f;border-radius:18px;background:rgba(247,246,241,.8);}
+$R .ml{font-size:20px;font-weight:700;letter-spacing:4px;color:#b6402f;white-space:nowrap;}
+$R .mt{position:relative;font-size:28px;font-weight:700;white-space:nowrap;}
+$R .mt .st{position:absolute;left:-6px;right:-6px;top:52%;height:4px;background:#b6402f;border-radius:2px;transform-origin:left center;}
+$R .mn{font-size:24px;font-weight:500;color:#66686e;}
+""", f"""
+<div class="chip"><b>{HEX_ICON}</b>Key tools</div>
+<h1 class="h1 title">{words("How we built it.")}</h1>
+{tool_cards}
+<div class="miss"><span class="ml">DIDN’T MAKE IT</span><span class="mt">Microsoft Presidio (PII redaction)<span class="st"></span></span><span class="mn">no CDN build, no time to self-host</span></div>
+""", """
+tl.fromTo(q('.chip'),{opacity:0,x:-20},{opacity:1,x:0,duration:.5,ease:"power2.out"},0);
+tl.fromTo(qa('.title .w'),{opacity:0,y:30},{opacity:1,y:0,duration:.5,stagger:.08,ease:"power3.out"},.15);
+[.5,1.4,2.3,3.2].forEach((t,i)=>{
+  tl.fromTo(q('.tc'+i),{opacity:0,y:30},{opacity:1,y:0,duration:.5,ease:"power2.out"},t);
+  tl.fromTo(qa('.tc'+i+' .tr'),{opacity:0,x:-14},{opacity:1,x:0,duration:.3,stagger:.12,ease:"power2.out"},t+.25);
+});
+tl.fromTo(q('.miss'),{opacity:0,y:20},{opacity:1,y:0,duration:.5,ease:"power2.out"},4.5);
+tl.fromTo(q('.miss .st'),{scaleX:0},{scaleX:1,duration:.45,ease:"power2.in"},5.1);
 """)
 
 # ─────────────────────────── 04 web ───────────────────────────
@@ -503,8 +513,8 @@ qa('.cc').forEach((c,i)=>tl.fromTo(c,{opacity:0,y:40,x:(i-2.5)*22},{opacity:1,y:
 tl.fromTo(qa('.slogan .w'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,stagger:.12,ease:"power3.out"},1.4);
 """)
 
-NEWDUR = {"01-title": 3.5, "02-purpose": 6, "03-architecture": 8, "04-web": 6.5, "05-time": 6.5, "06-credits": 6.5,
-          "07-noise": 6.5, "08-dedup": 6.5, "09-bigger": 6, "10-close": 3.5}
+NEWDUR = {"01-title": 3.5, "02-architecture": 8, "03-tools": 7, "04-web": 6.5, "05-time": 6.5, "06-credits": 6.5,
+          "07-noise": 6.5, "08-dedup": 6.5, "09-bigger": 5.5, "10-close": 3}
 
 for fid, odur, css, markup, js in FRAMES:
     dur = NEWDUR[fid]
