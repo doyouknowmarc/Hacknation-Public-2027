@@ -4,7 +4,43 @@ Capture expert invoice-processing decisions with click-triggered screenshots and
 
 Live: https://hacknation-sensei.vercel.app · ▶ **Demo** plays the one-minute story · **Open app** starts the real thing.
 
+![Sensei landing page: “In every company, someone just knows.”](docs/screenshots/landing-hero.jpg)
+
+## The story in four moments
+
+Sabine (the expert) approves invoices; Sensei learns *why* and teaches it to Lena (the new hire). These frames are from the one-minute demo.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/story-capture.jpg" alt="Capture: Sensei watches Sabine work and asks why at a pause"></td>
+    <td width="50%"><img src="docs/screenshots/story-rule.jpg" alt="Work Map: Sabine's answer becomes a confirmed rule"></td>
+  </tr>
+  <tr>
+    <td><b>1 · Capture.</b> Sensei watches Sabine work in the expense inbox and asks one <i>why</i> question when she pauses.</td>
+    <td><b>2 · Work Map.</b> Her answer becomes a rule, linked to her own words and confirmed by her.</td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/story-switch.jpg" alt="Switching to Lena, the apprentice"></td>
+    <td><img src="docs/screenshots/story-stop.jpg" alt="Teach: Sensei stops Lena before a wrong approval is saved"></td>
+  </tr>
+  <tr>
+    <td><b>3 · A new hire.</b> Lena gets a case Sabine never saw: €90, with €40 already spent this month.</td>
+    <td><b>4 · Teach.</b> Before the approval is saved, Sensei stops her: €130 is over the limit, so the project lead decides.</td>
+  </tr>
+</table>
+
 ## How to use the app (without the demo)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/app-capture.jpg" alt="Capture page with voice and tone selection"></td>
+    <td width="50%"><img src="docs/screenshots/app-inbox.jpg" alt="Expense inbox sandbox with the Anthropic invoice open"></td>
+  </tr>
+  <tr>
+    <td><b>Capture:</b> pick a voice and tone, prepare a session, share the sandbox tab.</td>
+    <td><b>Expense inbox:</b> the paired sandbox where the expert (and later the new hire) decides.</td>
+  </tr>
+</table>
 
 Use Chrome on a laptop, with headphones and a microphone. **Open app** (`/studio`) shows the four steps in order; the highlighted card is the next one. Each run takes about 10 minutes.
 
@@ -28,6 +64,13 @@ Open http://127.0.0.1:3000/capture in Chrome. Prepare a session, open its **pair
 The supplied keys are in the ignored `.env.local`. If starting elsewhere, copy `.env.example` and fill in both API keys. The agent setup script creates/updates Capture and Debrief, their tool definitions, and prepares the tutor agent. Module 3 is available from every confirmed Work Map.
 
 ## Landing page
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/landing-how.jpg" alt="Landing page: how it works, Capture, Work Map, Teach"></td>
+    <td width="50%"><img src="docs/screenshots/landing-benefits.jpg" alt="Landing page: benefits"></td>
+  </tr>
+</table>
 
 `/` is the public landing page (`src/app/landing.tsx`). The hero has **▶ Demo**, which opens the one-minute story full-screen over the page (✕ returns to the same scroll position), and **Open app** (`/studio`). Scrolling down: the problem (know-how walks out the door; manual vs. expert), how it works (Capture → Work Map → Teach with the Sabine/Lena example and the multilingual “Why?”), six benefits, the compounding knowledge base (new hires today, AI agents tomorrow), how it’s built, and a closing call to action. The copy follows the explainer videos in `videos/`.
 
