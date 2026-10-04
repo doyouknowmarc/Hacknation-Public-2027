@@ -95,6 +95,16 @@ The supplied keys are in the ignored `.env.local`. If starting elsewhere, copy `
 
 Run `bash scripts/vercel-env.sh` once. It logs in, creates and links the `hacknation-sensei` project, and uploads every variable from `.env.local` to production and preview, with API keys marked sensitive. The landing page and the story are static and work as is. The live app needs shared storage on Vercel, because each route can run on a different instance. Run `npx vercel integration add upstash/upstash-kv` once and connect it to `hacknation-sensei`. That provides `KV_REST_API_URL` and `KV_REST_API_TOKEN`; then redeploy. Sessions, debriefs, Work Maps and click frames are then stored in Redis (`src/lib/storage.ts`), with a per-session lock so concurrent updates from different instances don't overwrite each other. Locally, without those variables, everything stays in `data/` as before. Without Redis on Vercel, saving fails with a clear message instead of losing sessions.
 
+## Knowledge dimensions
+
+`/knowledge` (**Knowledge** in the top menu, and a teaser section on the landing page) explains the model behind a Work Map. It starts with where the knowledge sits: value chain → Accounting & Finance → invoice processing. Three tabs follow:
+
+- **Knowledge dimensions:** the seven dimensions every expert decision is broken into. A–B understand the case (context, baseline), C–D make the judgment explicit (condition, rationale), E–F define the response (authority, release criteria), and G is the evidence behind all of them. Selecting a dimension shows what Sensei asks the expert, what to capture, and how the demo's Claude invoice (INV 2042) maps onto it. Each field is marked *Confirmed*, *Stated*, *Derived* or *Not captured*.
+- **Examples:** the three demo cases (Claude exception, quarterly supplies, fixed-cost anomaly), each with its condition, response, reason and release criteria.
+- **Rules & practices:** business rules that decide the route, kept apart from practice guidance that only advises.
+
+The content lives in `src/lib/knowledge.ts`.
+
 ## Scripted story (for the video)
 
 The landing page (`/`, also at `/story`) is a scripted player with no live AI calls. It starts only when **Demo** is pressed and runs about 55 seconds. Sabine routes the €180 Claude invoice to the project lead, Sensei asks whether the limit is per invoice or per month, and her answer becomes a rule. Lena is stopped before approving the €90 Orion invoice (€130 this month) and routes it correctly. It ends on the slogan “Sensei, teach the next generation.” **Open app** goes to `/studio`. The older 2-minute cut is hidden; `/?full=1` shows it.

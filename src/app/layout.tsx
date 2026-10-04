@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Sensei
           </Link>
           <nav>
+            <Link href="/knowledge">Knowledge</Link>
             <Link href="/story">Story</Link>
             <Link href="/studio">Live app</Link>
             <Link href="/capture">Capture</Link>

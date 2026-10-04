@@ -162,6 +162,37 @@ export default function Landing() {
           </div>
         </section>
 
+        <section className="landing-section dims-teaser">
+          <div>
+            <div className="eyebrow">THE KNOWLEDGE MODEL</div>
+            <h2>Every decision, broken into seven dimensions.</h2>
+            <p className="lead">
+              Context, baseline, condition, rationale, authority, release criteria, and the evidence
+              behind them. Sensei asks about each one and marks what is confirmed and what is still
+              unknown.
+            </p>
+            <Link className="button" href="/knowledge">
+              Explore the knowledge dimensions →
+            </Link>
+          </div>
+          <ol className="dims-mini" aria-label="The seven knowledge dimensions">
+            {[
+              ["A", "Business context"],
+              ["B", "Expected baseline"],
+              ["C", "Decision condition"],
+              ["D", "Business rationale"],
+              ["E", "Action and authority"],
+              ["F", "Release criteria"],
+              ["G", "Evidence and validity"],
+            ].map(([l, n]) => (
+              <li key={l}>
+                <span className="dim-letter">{l}</span>
+                {n}
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <section className="landing-section compound">
           <div className="compound-loop" aria-hidden>
             <span className="node n1">観 Capture</span>

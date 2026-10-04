@@ -2036,3 +2036,448 @@ textarea:focus-visible {
     transform: scale(0.8);
   }
 }
+
+/* ---------- knowledge dimensions ---------- */
+.knowledge {
+  max-width: 1200px;
+}
+.knowledge h1 {
+  font-size: 46px;
+  line-height: 1.12;
+  max-width: 820px;
+}
+.zoom {
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.zoom-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+.zoom-steps button {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: 0;
+  border-radius: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  padding: 14px 20px;
+  text-align: left;
+}
+.zoom-steps button:last-child {
+  border-right: 0;
+}
+.zoom-steps button.on {
+  background: var(--accent);
+  color: var(--paper);
+}
+.zoom-steps button.on small {
+  color: #c9d3e3;
+}
+.zoom-body {
+  padding: 20px;
+}
+.chain-support,
+.finance-grid {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+.chain-support {
+  grid-template-columns: repeat(4, 1fr);
+}
+.finance-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.chain-support button,
+.finance-grid button {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  font-weight: 600;
+}
+.chain-support .hit,
+.finance-grid .hit {
+  border-color: var(--accent);
+  background: var(--tint);
+}
+.finance-grid button:disabled {
+  opacity: 0.6;
+}
+.chain-primary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 80px;
+  gap: 6px;
+}
+.chain-primary span {
+  padding: 10px 12px;
+  background: var(--tint-soft);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.chain-primary small {
+  display: block;
+}
+.chain-primary .margin {
+  background: var(--accent);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+}
+.zoom-body.invoice {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.flow-step {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+.flow-step b {
+  display: block;
+  font: 700 22px "Shippori Mincho B1", serif;
+}
+.flow-step span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.flow-step.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+.flow-step.on span,
+.flow-step.on small {
+  color: #c9d3e3;
+}
+.k-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 18px;
+  flex-wrap: wrap;
+}
+.k-tabs button {
+  padding: 10px 16px;
+}
+.dim-map {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dim-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.dim-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dim-col .eyebrow {
+  margin-bottom: 2px;
+}
+/* arrows between the three groups: decision logic flows left to right */
+.dim-col.col-0::after,
+.dim-col.col-1::after {
+  content: "→";
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  color: #8d9cb4;
+  font-size: 20px;
+}
+.dim-card {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 16px;
+  text-align: left;
+  background: #fff;
+  border-radius: 6px;
+}
+.dim-card b {
+  display: block;
+  font-size: 16px;
+}
+.dim-card small {
+  font-weight: 500;
+}
+.dim-card.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+  box-shadow: 0 8px 24px #16263f33;
+}
+.dim-card.active small {
+  color: #c9d3e3;
+}
+.dim-letter {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 14px;
+}
+.dim-card.active .dim-letter {
+  background: var(--paper);
+  border-color: var(--paper);
+}
+.dim-map > .dim-card {
+  background: #e2dfd5;
+  border-style: dashed;
+}
+.dim-map > .dim-card.active {
+  background: var(--accent);
+  border-style: solid;
+}
+.dim-legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.dim-detail {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+.dim-detail h2 {
+  font-size: 30px;
+  margin: 6px 0 14px;
+}
+.dim-ask {
+  font: 700 22px/1.4 "Shippori Mincho B1", serif;
+  color: var(--accent);
+  margin: 4px 0 16px;
+}
+.dim-note {
+  padding: 12px 14px;
+  border-left: 3px solid var(--hinoki);
+  background: #f3ecdc;
+  font-size: 14px;
+}
+.dim-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.dim-table th,
+.dim-table td {
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.dim-table th {
+  width: 34%;
+  font-weight: 700;
+}
+.dim-table td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+.dim-table tr.missing td:nth-child(2) {
+  color: var(--muted);
+}
+.status-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.status-tag.confirmed {
+  background: var(--accent);
+  color: var(--paper);
+}
+.status-tag.stated {
+  background: var(--tint);
+  color: var(--accent);
+}
+.status-tag.derived {
+  background: #f1e6cf;
+  color: #7a5b22;
+}
+.status-tag.missing {
+  background: transparent;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+}
+.dim-source {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.case-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+.case-tabs button {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+}
+.case-tabs button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+.case-tabs button.on small {
+  color: #c9d3e3;
+}
+.case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.case-situation {
+  font-size: 18px;
+}
+.case-decision {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.case-decision div {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+.case-decision dt {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.case-decision dd {
+  margin: 4px 0 0;
+}
+.rules-table-wrap {
+  padding: 0;
+  overflow-x: auto;
+}
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.rules-table th,
+.rules-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rules-table th {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.rules-table td b,
+.rules-table td small {
+  display: block;
+}
+.rules-table tr.guidance {
+  background: #f3f1ea;
+}
+.rule-id {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: 800;
+  color: var(--accent);
+}
+.knowledge-cta {
+  margin-top: 36px;
+}
+.dims-teaser {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.dims-mini {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.dims-mini li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  font-weight: 700;
+}
+.dims-mini li:last-child {
+  border-style: dashed;
+  background: #e2dfd5;
+}
+@media (max-width: 1000px) {
+  .dim-cols,
+  .dim-detail,
+  .case,
+  .dims-teaser {
+    grid-template-columns: 1fr;
+  }
+  .dim-col::after {
+    display: none;
+  }
+  .chain-support,
+  .finance-grid,
+  .case-tabs,
+  .zoom-body.invoice {
+    grid-template-columns: 1fr 1fr;
+  }
+  .chain-primary {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dim-legend {
+    flex-direction: column;
+  }
+}
+@media (max-width: 650px) {
+  .knowledge h1 {
+    font-size: 32px;
+  }
+  .zoom-steps,
+  .chain-support,
+  .finance-grid,
+  .case-tabs,
+  .zoom-body.invoice {
+    grid-template-columns: 1fr;
+  }
+  .zoom-steps button {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
