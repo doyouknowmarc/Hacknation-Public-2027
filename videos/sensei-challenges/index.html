@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #eae8e0;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="59.5"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-title"
+        class="scene"
+        data-composition-id="01-title"
+        data-composition-src="compositions/frames/01-title.html"
+        data-start="0"
+        data-duration="4.1"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="el-02-purpose"
+        class="scene"
+        data-composition-id="02-purpose"
+        data-composition-src="compositions/frames/02-purpose.html"
+        data-start="3.5"
+        data-duration="6.6"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-03-architecture"
+        class="scene"
+        data-composition-id="03-architecture"
+        data-composition-src="compositions/frames/03-architecture.html"
+        data-start="9.5"
+        data-duration="8.6"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="el-04-web"
+        class="scene"
+        data-composition-id="04-web"
+        data-composition-src="compositions/frames/04-web.html"
+        data-start="17.5"
+        data-duration="7.1"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-05-time"
+        class="scene"
+        data-composition-id="05-time"
+        data-composition-src="compositions/frames/05-time.html"
+        data-start="24"
+        data-duration="7.1"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="el-06-credits"
+        class="scene"
+        data-composition-id="06-credits"
+        data-composition-src="compositions/frames/06-credits.html"
+        data-start="30.5"
+        data-duration="7.1"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-07-noise"
+        class="scene"
+        data-composition-id="07-noise"
+        data-composition-src="compositions/frames/07-noise.html"
+        data-start="37"
+        data-duration="7.1"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="el-08-dedup"
+        class="scene"
+        data-composition-id="08-dedup"
+        data-composition-src="compositions/frames/08-dedup.html"
+        data-start="43.5"
+        data-duration="7.1"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-09-bigger"
+        class="scene"
+        data-composition-id="09-bigger"
+        data-composition-src="compositions/frames/09-bigger.html"
+        data-start="50"
+        data-duration="6.6"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="el-10-close"
+        class="scene"
+        data-composition-id="10-close"
+        data-composition-src="compositions/frames/10-close.html"
+        data-start="56"
+        data-duration="3.5"
+        data-track-index="1"
+      ></div>
+
+      <!-- BGM -->
+      <audio
+        id="el-bgm"
+        src="assets/audio/bgm-cut.mp3"
+        data-start="0"
+        data-duration="59.5"
+        data-track-index="11"
+        data-volume="0.9"
+      ></audio>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-title", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 3.5);
+        tl.fromTo("#el-02-purpose", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 3.5);
+        tl.addLabel("hf:transition:01-title:02-purpose:blur-crossfade", 3.5);
+        tl.to("#el-02-purpose", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 9.5);
+        tl.fromTo("#el-03-architecture", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 9.5);
+        tl.addLabel("hf:transition:02-purpose:03-architecture:blur-crossfade", 9.5);
+        tl.to("#el-03-architecture", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 17.5);
+        tl.fromTo("#el-04-web", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 17.5);
+        tl.addLabel("hf:transition:03-architecture:04-web:blur-crossfade", 17.5);
+        tl.to("#el-04-web", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 24);
+        tl.fromTo("#el-05-time", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 24);
+        tl.addLabel("hf:transition:04-web:05-time:blur-crossfade", 24);
+        tl.to("#el-05-time", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 30.5);
+        tl.fromTo("#el-06-credits", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 30.5);
+        tl.addLabel("hf:transition:05-time:06-credits:blur-crossfade", 30.5);
+        tl.to("#el-06-credits", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 37);
+        tl.fromTo("#el-07-noise", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 37);
+        tl.addLabel("hf:transition:06-credits:07-noise:blur-crossfade", 37);
+        tl.to("#el-07-noise", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 43.5);
+        tl.fromTo("#el-08-dedup", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 43.5);
+        tl.addLabel("hf:transition:07-noise:08-dedup:blur-crossfade", 43.5);
+        tl.to("#el-08-dedup", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 50);
+        tl.fromTo("#el-09-bigger", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 50);
+        tl.addLabel("hf:transition:08-dedup:09-bigger:blur-crossfade", 50);
+        tl.to("#el-09-bigger", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 56);
+        tl.fromTo("#el-10-close", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 56);
+        tl.addLabel("hf:transition:09-bigger:10-close:blur-crossfade", 56);
+        tl.to({}, { duration: 59.5 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>

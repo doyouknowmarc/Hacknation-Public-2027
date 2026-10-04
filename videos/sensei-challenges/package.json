@@ -1,0 +1,11 @@
+{
+  "name": "sensei-challenges",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.118 preview",
+    "check": "npx --yes hyperframes@0.8.118 check",
+    "render": "npx --yes hyperframes@0.8.118 render",
+    "publish": "npx --yes hyperframes@0.8.118 publish"
+  }
+}

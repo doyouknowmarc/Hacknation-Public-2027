@@ -1,0 +1,10 @@
+node_modules/
+.next/
+data/
+data-archive/
+.env*
+!.env.example
+*API Key*
+*.tsbuildinfo
+recordings/
+.vercel

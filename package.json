@@ -1,0 +1,40 @@
+{
+  "name": "ai-apprentice",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "setup:agents": "tsx --env-file=.env.local scripts/setup-agents.ts",
+    "smoke": "node --import tsx scripts/smoke.ts",
+    "reset:demo": "tsx scripts/reset-demo.ts",
+    "story:audio": "tsx --env-file=.env.local scripts/render-story-audio.ts",
+    "story:record": "node scripts/record-story.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0",
+    "@elevenlabs/react": "1.16.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "playwright-core": "^1.63.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "livekit-client": "2.16.1"
+  }
+}
