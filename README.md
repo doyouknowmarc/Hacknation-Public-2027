@@ -10,16 +10,18 @@ Live: https://hacknation-sensei.vercel.app · ▶ **Demo** plays the one-minute 
 
 <table>
   <tr>
-    <td width="50%"><a href="https://hacknation-sensei.vercel.app/videos/sensei-overview.mp4"><img src="docs/screenshots/video-overview.jpg" alt="Play: Sensei in one minute: what it does and why (0:58)"></a></td>
-    <td width="50%"><a href="https://hacknation-sensei.vercel.app/videos/sensei-tech.mp4"><img src="docs/screenshots/video-tech.jpg" alt="Play: Building Sensei: architecture and challenges (1:00)"></a></td>
+    <td width="33%"><a href="https://hacknation-sensei.vercel.app/videos/sensei-overview.mp4"><img src="docs/screenshots/video-overview.jpg" alt="Play: Sensei in one minute: what it does and why (0:58)"></a></td>
+    <td width="33%"><a href="https://hacknation-sensei.vercel.app/videos/sensei-tech.mp4"><img src="docs/screenshots/video-tech.jpg" alt="Play: Building Sensei: architecture and challenges (1:00)"></a></td>
+    <td width="33%"><a href="https://hacknation-sensei.vercel.app/videos/sensei-team.mp4"><img src="docs/screenshots/video-team.jpg" alt="Play: Meet the team behind Sensei (0:21)"></a></td>
   </tr>
   <tr>
     <td><b>Sensei Overview</b> (0:58): why expert know-how gets lost, and how Sensei captures it, confirms it and teaches it.</td>
     <td><b>Tech Video</b> (1:00): the architecture (Claude Haiku, Claude Opus, ElevenLabs agents), the challenges we hit, and what's next.</td>
+    <td><b>Team</b> (0:21): Marc, Michael, Junaid and Saad, the team behind Sensei.</td>
   </tr>
 </table>
 
-Click a poster to play the video in your browser. The files are also in the repo ([overview](videos/sensei-explainer/renders/sensei-explainer.mp4), [tech](videos/sensei-challenges/renders/sensei-challenges.mp4)). Both were made with HyperFrames; their sources are in [`videos/`](videos).
+Click a poster to play the video in your browser. The files are also in the repo ([overview](videos/sensei-explainer/renders/sensei-explainer.mp4), [tech](videos/sensei-challenges/renders/sensei-challenges.mp4), [team](videos/team/sensei-team.mp4)). The overview and tech videos were made with HyperFrames; their sources are in [`videos/`](videos).
 
 ## The story in four moments
 
