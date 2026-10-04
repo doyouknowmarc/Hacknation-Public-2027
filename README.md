@@ -6,6 +6,21 @@ Live: https://hacknation-sensei.vercel.app · ▶ **Demo** plays the one-minute 
 
 ![Sensei landing page: “In every company, someone just knows.”](docs/screenshots/landing-hero.jpg)
 
+## Watch
+
+<table>
+  <tr>
+    <td width="50%"><a href="videos/sensei-explainer/renders/sensei-explainer.mp4"><img src="docs/screenshots/video-overview.jpg" alt="Play: Sensei in one minute: what it does and why (0:58)"></a></td>
+    <td width="50%"><a href="videos/sensei-challenges/renders/sensei-challenges.mp4"><img src="docs/screenshots/video-tech.jpg" alt="Play: Building Sensei: architecture and challenges (1:00)"></a></td>
+  </tr>
+  <tr>
+    <td><b>Sensei Overview</b> (0:58): why expert know-how gets lost, and how Sensei captures it, confirms it and teaches it.</td>
+    <td><b>Tech Video</b> (1:00): the architecture (Claude Haiku, Claude Opus, ElevenLabs agents), the challenges we hit, and what's next.</td>
+  </tr>
+</table>
+
+Click a poster to play it on GitHub. Both videos were made with HyperFrames; their sources are in [`videos/`](videos).
+
 ## The story in four moments
 
 Sabine (the expert) approves invoices; Sensei learns *why* and teaches it to Lena (the new hire). These frames are from the one-minute demo.
